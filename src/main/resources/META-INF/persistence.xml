@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="hawthorne_PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>io.tabletoptools.hawthorne.model.Player</class>
+        <class>io.tabletoptools.hawthorne.model.Authentication</class>
+        <class>io.tabletoptools.hawthorne.model.Character</class>
+        <class>io.tabletoptools.hawthorne.model.Activity</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.5.153:3306/hawthorne?zeroDateTimeBehavior=convertToNull&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;useSSL=false" />
+            <property name="hibernate.connection.username" value="hawthorne"/>
+            <property name="hibernate.connection.type" value="javax.sql.DataSource"/>
+            <property name="hibernate.connection.password" value="hawthorne" />
+            <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
+            <property name="hibernate.c3p0.min_size" value="3"/>
+            <property name="hibernate.c3p0.max_size" value="25"/>
+            <property name="hibernate.c3p0.timeout" value="1800"/>
+            <property name="hibernate.c3p0.aquire_increment" value="3"/>
+            <property name="hibernate.c3p0.idle_test_period" value="300" />
+        </properties>
+    </persistence-unit>
+</persistence>
